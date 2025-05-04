@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор систем счисления</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+<div class="calculator-container rounded-2xl shadow-2xl overflow-hidden w-full max-w-md">
+    <div class="bg-indigo-600 p-6 text-white">
+        <h1 class="text-2xl font-bold text-center">Конвертер систем счисления</h1>
+        <p class="text-center text-indigo-100 mt-1">Перевод чисел между системами (2-16)</p>
+    </div>
+
+    <div class="p-6">
+        <div class="grid grid-cols-2 gap-4 mb-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">Из системы:</label>
+                <select id="fromBase" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                    <option value="2">Двоичная (2)</option>
+                    <option value="3">Троичная (3)</option>
+                    <option value="4">Четверичная (4)</option>
+                    <option value="5">Пятеричная (5)</option>
+                    <option value="6">Шестеричная (6)</option>
+                    <option value="7">Семеричная (7)</option>
+                    <option value="8">Восьмеричная (8)</option>
+                    <option value="9">Девятеричная (9)</option>
+                    <option value="10" selected>Десятичная (10)</option>
+                    <option value="11">Одиннадцатеричная (11)</option>
+                    <option value="12">Двенадцатеричная (12)</option>
+                    <option value="13">Тринадцатеричная (13)</option>
+                    <option value="14">Четырнадцатеричная (14)</option>
+                    <option value="15">Пятнадцатеричная (15)</option>
+                    <option value="16">Шестнадцатеричная (16)</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1">В систему:</label>
+                <select id="toBase" class="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
+                    <option value="2">Двоичная (2)</option>
+                    <option value="3">Троичная (3)</option>
+                    <option value="4">Четверичная (4)</option>
+                    <option value="5">Пятеричная (5)</option>
+                    <option value="6">Шестеричная (6)</option>
+                    <option value="7">Семеричная (7)</option>
+                    <option value="8">Восьмеричная (8)</option>
+                    <option value="9">Девятеричная (9)</option>
+                    <option value="10">Десятичная (10)</option>
+                    <option value="11">Одиннадцатеричная (11)</option>
+                    <option value="12">Двенадцатеричная (12)</option>
+                    <option value="13">Тринадцатеричная (13)</option>
+                    <option value="14">Четырнадцатеричная (14)</option>
+                    <option value="15">Пятнадцатеричная (15)</option>
+                    <option value="16" selected>Шестнадцатеричная (16)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Число:</label>
+            <input type="text" id="numberInput" class="w-full p-3 border border-gray-300 rounded-md bg-gray-50 font-mono text-xl" readonly>
+        </div>
+
+        <div class="grid grid-cols-4 gap-3 mb-6">
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="0">0</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="1">1</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="2">2</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="3">3</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="4">4</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="5">5</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="6">6</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="7">7</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="8">8</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="9">9</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="A">A</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="B">B</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="C">C</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="D">D</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="E">E</button>
+            <button class="btn-number bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 rounded-md" value="F">F</button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <button id="clearBtn" class="action-btn bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-md flex items-center justify-center transition">
+                <i class="fas fa-trash-alt mr-2"></i> Очистить
+            </button>
+            <button id="convertBtn" class="action-btn bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-md flex items-center justify-center transition">
+                <i class="fas fa-exchange-alt mr-2"></i> Конвертировать
+            </button>
+        </div>
+
+        <div class="mt-6">
+            <label class="block text-sm font-medium text-gray-700 mb-1">Результат:</label>
+            <input type="text" id="resultOutput" class="w-full p-3 border border-gray-300 rounded-md bg-gray-100 font-mono text-xl" readonly>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

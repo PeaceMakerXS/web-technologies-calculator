@@ -1,0 +1,44 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    background-color: rgba(255, 255, 255, 0.85);
+    cursor: default;
+}
+
+.calculator-container {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.btn-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.btn-number {
+    transition: all 0.2s ease;
+    cursor: url("assets/icons8-python-50.png"), pointer;
+}
+
+.btn-number:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn {
+    transition: all 0.2s ease;
+    cursor: url("assets/icons8-python-50.png"), pointer;
+}
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
